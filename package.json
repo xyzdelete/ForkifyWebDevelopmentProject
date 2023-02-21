@@ -1,0 +1,23 @@
+{
+    "name": "ForkifyWebDevelopmentProject",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xyzdelete/ForkifyWebDevelopmentProject.git"
+    },
+    "author": "Arturs Anikins",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/xyzdelete/ForkifyWebDevelopmentProject/issues"
+    },
+    "homepage": "https://github.com/xyzdelete/ForkifyWebDevelopmentProject#readme",
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.8.3",
+        "parcel": "^2.8.3"
+    }
+}
