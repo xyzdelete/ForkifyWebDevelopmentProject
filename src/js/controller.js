@@ -8,10 +8,6 @@ import { async } from "regenerator-runtime/runtime";
 import "core-js/stable";
 import recipeView from "./views/recipeView.js";
 
-if (module.hot) {
-    module.hot.accept();
-}
-
 const controlRecipes = async function () {
     try {
         recipeView.renderSpinner();
@@ -42,8 +38,7 @@ const controlSearchResults = async function () {
         await model.loadSearchResults(query);
 
         // 3) Render results
-
-        resultsView.render(model.state.search.results);
+        resultsView.render(model.getSearchResultsPage());
     } catch (err) {
         console.log(err);
     }
