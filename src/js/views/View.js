@@ -13,7 +13,7 @@ export default class View {
     }
 
     _clear() {
-        this._parentElement.innerHTML = ``;
+        this._parentElement.innerHTML = "";
     }
 
     renderSpinner() {
