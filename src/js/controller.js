@@ -2,8 +2,8 @@ import * as model from "./model.js";
 
 import recipeView from "./views/recipeView.js";
 
-// polyfill asyncs
-import "regenerator-runtime/runtime";
+// // polyfill asyncs
+
 // polyfill everything else
 import "core-js/stable";
 import recipeView from "./views/recipeView.js";
