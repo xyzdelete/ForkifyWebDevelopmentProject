@@ -1,17 +1,17 @@
 import * as model from "./model.js";
+import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
 import bookmarksView from "./views/bookmarksView.js";
 import paginationView from "./views/paginationView.js";
-import addRecipeView from "./views/addRecipeViews.js";
-import { MODAL_CLOSE_SEC } from "./config.js";
+import addRecipeView from "./views/addRecipeView.js";
 
-// // polyfill asyncs
-import { async } from "regenerator-runtime/runtime";
-// polyfill everything else
 import "core-js/stable";
-import recipeView from "./views/recipeView.js";
+// polyfill asyncs
+import "regenerator-runtime/runtime";
+import { async } from "regenerator-runtime";
+// polyfill everything else
 
 const controlRecipes = async function () {
     try {
@@ -103,6 +103,12 @@ const controlAddRecipe = async function (newRecipe) {
 
         // Success message
         addRecipeView.renderMessage();
+
+        // Render bookmark view
+        bookmarksView.render(model.state.bookmarks);
+
+        // Change ID in URL
+        window.history.pushState(null, "", `#${model.state.recipe.id}`);
 
         // Close form window
         setTimeout(function () {
