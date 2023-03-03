@@ -3,15 +3,13 @@ import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
-import bookmarksView from "./views/bookmarksView.js";
 import paginationView from "./views/paginationView.js";
+import bookmarksView from "./views/bookmarksView.js";
 import addRecipeView from "./views/addRecipeView.js";
 
-import "core-js/stable";
-// polyfill asyncs
-import "regenerator-runtime/runtime";
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
 import { async } from "regenerator-runtime";
-// polyfill everything else
 
 const controlRecipes = async function () {
     try {
@@ -33,6 +31,7 @@ const controlRecipes = async function () {
         recipeView.render(model.state.recipe);
     } catch (err) {
         recipeView.renderError();
+        console.error(err);
     }
 };
 
